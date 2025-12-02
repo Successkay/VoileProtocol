@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voile Protocol — Instant Liquidity for Pending Unstakes</title>
+  <meta name="description" content="Voile Protocol fronts liquidity against pending unstake withdrawals, giving stakers instant access to their funds." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="container">
+  <header class="nav">
+    <div class="logo">Voile</div>
+    <nav><a href="https://x.com/voileprotocol">Follow on X</a></nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" data-aos="fade-up">
+    <div>
+      <div class="eyebrow">Instant Liquidity for Pending Unstakes</div>
+      <h1>Unlock your capital the moment you unstake.</h1>
+      <p class="sub">No wait. No slippage. No exit queues. Voile fronts liquidity against pending withdrawals and auto-settles when they clear.</p>
+
+      <div class="cta-row">
+        <button class="btn" onclick="scrollToWaitlist()">Join the waitlist</button>
+        <button class="btn ghost" onclick="window.open('https://x.com/voileprotocol','_blank')">Follow on X</button>
+      </div>
+
+      <div class="bullets">
+        <div class="bullet">
+          <strong>Borrow instantly</strong>
+          <span>Access up to X% immediately.</span>
+        </div>
+        <div class="bullet">
+          <strong>Auto‑repay</strong>
+          <span>Loan settles on withdrawal.</span>
+        </div>
+        <div class="bullet">
+          <strong>Composable</strong>
+          <span>Works with any staking provider.</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="card" data-aos="fade-left">
+      <div class="flow">
+        <div class="step"><div class="dot">1</div><div><strong>Unstake</strong><div class="small">Start a withdrawal.</div></div></div>
+        <div class="step"><div class="dot">2</div><div><strong>Borrow</strong><div class="small">Voile fronts up to X% instantly.</div></div></div>
+        <div class="step"><div class="dot">3</div><div><strong>Settle</strong><div class="small">Auto-repay on final withdraw.</div></div></div>
+
+        <form id="waitForm" class="waitlist" onsubmit="return joinWaitlist(event)">
+          <input class="input" type="email" placeholder="Enter email..." required />
+          <button class="btn" type="submit">Join</button>
+        </form>
+        <div id="msg" style="display:none;color:var(--accent);font-size:13px;">Thanks — confirmation sent.</div>
+      </div>
+    </aside>
+  </section>
+
+</div>
+
+<footer>
+  © Voile Protocol — Building in public. Follow us on X.
+</footer>
+
+<a href="https://x.com/voileprotocol" class="follow-x" target="_blank">Follow on X</a>
+
+<script>
+  function joinWaitlist(e){ e.preventDefault(); document.getElementById('msg').style.display='block'; e.target.reset(); return false; }
+  function scrollToWaitlist(){ document.getElementById('waitlist')?.scrollIntoView({behavior:'smooth'}); }
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration:700,once:true});</script>
+
+</body>
+</html>
